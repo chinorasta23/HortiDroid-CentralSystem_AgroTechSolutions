@@ -66,20 +66,7 @@ public class main extends javax.swing.JFrame {
             genHumVarF = 0;
         }
         
-        int GenPhNum = moduloArduino.getPromedioPH();
-        String GenPhNumVar = String.valueOf(GenPhNum);
-        GenPHVar.setText(GenPhNumVar + "pH");
-        int genPHVarF = 0;
-        
-        if(GenPhNum < 6 || GenPhNum > 7){
-            GenPHVar.setBackground(new java.awt.Color(102, 0, 0));
-            genPHVarF = 1;
-        }else {
-            GenPHVar.setBackground(new java.awt.Color(0, 102, 0));
-            genPHVarF = 0;
-        }
-        
-        if (genPHVarF == 1 || genHumVarF == 1 || genTempVarF == 1){
+        if (genHumVarF == 1 || genTempVarF == 1){
             generalPanel.setBackground(new java.awt.Color(102, 0, 0));
         }else{
             generalPanel.setBackground(new java.awt.Color(0,153,51));
@@ -400,9 +387,6 @@ public class main extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         generalPanel = new javax.swing.JPanel();
         generalLabel = new javax.swing.JLabel();
-        pHPanel = new javax.swing.JPanel();
-        GenPHVar = new javax.swing.JTextField();
-        GenPHLabel = new javax.swing.JLabel();
         tempPanel = new javax.swing.JPanel();
         GenTempVar = new javax.swing.JTextField();
         GenTempLabel = new javax.swing.JLabel();
@@ -530,31 +514,6 @@ public class main extends javax.swing.JFrame {
         generalLabel.setText("GENERAL");
         generalPanel.add(generalLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 16, 98, 34));
 
-        pHPanel.setBackground(new java.awt.Color(51, 51, 51));
-        pHPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        GenPHVar.setEditable(false);
-        GenPHVar.setBackground(new java.awt.Color(0, 102, 0));
-        GenPHVar.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        GenPHVar.setForeground(new java.awt.Color(255, 255, 255));
-        GenPHVar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        GenPHVar.setText("5 pH");
-        GenPHVar.setBorder(null);
-        GenPHVar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GenPHVarActionPerformed(evt);
-            }
-        });
-        pHPanel.add(GenPHVar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
-
-        GenPHLabel.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        GenPHLabel.setForeground(new java.awt.Color(255, 255, 255));
-        GenPHLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        GenPHLabel.setText("pH");
-        pHPanel.add(GenPHLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 40));
-
-        generalPanel.add(pHPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
-
         tempPanel.setBackground(new java.awt.Color(51, 51, 51));
         tempPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -603,7 +562,7 @@ public class main extends javax.swing.JFrame {
         GenHumLabel.setText("HUMEDAD");
         humPanel.add(GenHumLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        generalPanel.add(humPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, 70));
+        generalPanel.add(humPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
 
         mainPanel.add(generalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 110, 420));
 
@@ -1108,10 +1067,6 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_GenHumVarActionPerformed
 
-    private void GenPHVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GenPHVarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_GenPHVarActionPerformed
-
     private void F1TempVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1TempVarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_F1TempVarActionPerformed
@@ -1311,8 +1266,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel GenHumLabel3;
     private javax.swing.JLabel GenHumLabel4;
     private javax.swing.JTextField GenHumVar;
-    private javax.swing.JLabel GenPHLabel;
-    private javax.swing.JTextField GenPHVar;
     private javax.swing.JLabel GenTempLabel;
     private javax.swing.JTextField GenTempVar;
     private javax.swing.JButton changeFilaBtn;
@@ -1347,7 +1300,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JPanel mainPanel;
-    private javax.swing.JPanel pHPanel;
     private javax.swing.JPanel pHPanel1;
     private javax.swing.JPanel pHPanel2;
     private javax.swing.JPanel pHPanel3;
