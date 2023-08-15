@@ -30,12 +30,12 @@ public class main extends javax.swing.JFrame {
             /* phSueloFila2 */ 7,
             /* phSueloFila3 */ 6,
             /* phSueloFila4 */ 7,
-            /* humedadFila1 */ 55,
+            /* humedadFila1 */ 75,
             /* humedadFila2 */ 75,
             /* humedadFila3 */ 75,
             /* humedadFila4 */ 75,
             /* promedioHumedad */ 66,
-            /* promedioTemperatura */ 23,
+            /* promedioTemperatura */ 28,
             /* promedioPH */ 7
         );
        
@@ -59,8 +59,8 @@ public class main extends javax.swing.JFrame {
         int genHumVarF = 0;
         
         if(GenNumHum < 70 || GenNumHum > 80){
-            GenHumVar.setBackground(new java.awt.Color(102, 0, 0));
-            genHumVarF = 1;
+            GenHumVar.setBackground(new java.awt.Color(0, 102, 0));
+            genHumVarF = 0;
         }else {
             GenHumVar.setBackground(new java.awt.Color(0, 102, 0));
             genHumVarF = 0;
@@ -71,21 +71,7 @@ public class main extends javax.swing.JFrame {
         }else{
             generalPanel.setBackground(new java.awt.Color(0,153,51));
         }
-        
-        //Fila 1
-        int F1TempVarNum = moduloArduino.getTempFila1();
-        String F1TempVarNumber = String.valueOf(F1TempVarNum);
-        F1TempVar.setText(F1TempVarNumber + "°");
-        int F1TempVarF = 0;
-        
-        if(F1TempVarNum < 18 || F1TempVarNum > 24){
-            F1TempVar.setBackground(new java.awt.Color(102, 0, 0));
-            F1TempVarF = 1;
-        }else {
-            F1TempVar.setBackground(new java.awt.Color(0, 102, 0));
-            F1TempVarF = 0;
-        }
-        
+
         int f1HumVarNum = moduloArduino.getHumedadFila1();
         String f1HumVarNumber = String.valueOf(f1HumVarNum);
         f1HumVar.setText(f1HumVarNumber + "%");
@@ -112,7 +98,7 @@ public class main extends javax.swing.JFrame {
             F1PhVarF = 0;
         }
         
-        if (F1PhVarF == 1 || f1HumVarF == 1 || F1TempVarF == 1){
+        if (F1PhVarF == 1 || f1HumVarF == 1){
             F1Panel.setBackground(new java.awt.Color(102, 0, 0));
             F1Estado1.setBackground(new java.awt.Color(102, 0, 0));
         }else{
@@ -122,17 +108,6 @@ public class main extends javax.swing.JFrame {
         
         //Fila 2
         int F2TempVarNum = moduloArduino.getTempFila2();
-        String F2TempVarNumber = String.valueOf(F2TempVarNum);
-        f2TempVar.setText(F2TempVarNumber + "°");
-        int F2TempVarF = 0;
-        
-        if(F2TempVarNum < 18 || F2TempVarNum > 24){
-            f2TempVar.setBackground(new java.awt.Color(102, 0, 0));
-            F2TempVarF = 1;
-        }else {
-            f2TempVar.setBackground(new java.awt.Color(0, 102, 0));
-            F2TempVarF = 0;
-        }
         
         int f2HumVarNum = moduloArduino.getHumedadFila2();
         String f2HumVarNumber = String.valueOf(f2HumVarNum);
@@ -160,7 +135,7 @@ public class main extends javax.swing.JFrame {
             F2PhVarF = 0;
         }
         
-        if (F2PhVarF == 1 || f2HumVarF == 1 || F2TempVarF == 1){
+        if (F2PhVarF == 1 || f2HumVarF == 1){
             F2Panel.setBackground(new java.awt.Color(102, 0, 0));
             F1Estado2.setBackground(new java.awt.Color(102, 0, 0));
         }else{
@@ -169,18 +144,6 @@ public class main extends javax.swing.JFrame {
         }
         
         //Fila 3
-        int F3TempVarNum = moduloArduino.getTempFila3();
-        String F3TempVarNumber = String.valueOf(F3TempVarNum);
-        F3TempVar1.setText(F2TempVarNumber + "°");
-        int F3TempVarF = 0;
-        
-        if(F3TempVarNum < 18 || F3TempVarNum > 24){
-            F3TempVar1.setBackground(new java.awt.Color(102, 0, 0));
-            F3TempVarF = 1;
-        }else {
-            F3TempVar1.setBackground(new java.awt.Color(0, 102, 0));
-            F3TempVarF = 0;
-        }
         
         int f3HumVarNum = moduloArduino.getHumedadFila3();
         String f3HumVarNumber = String.valueOf(f3HumVarNum);
@@ -208,7 +171,7 @@ public class main extends javax.swing.JFrame {
             F3PhVarF = 0;
         }
         
-        if (F2PhVarF == 1 || f3HumVarF == 1 || F3TempVarF == 1){
+        if (F2PhVarF == 1 || f3HumVarF == 1){
             F3Panel1.setBackground(new java.awt.Color(102, 0, 0));
             F1Estado3.setBackground(new java.awt.Color(102, 0, 0));
         }else{
@@ -217,19 +180,7 @@ public class main extends javax.swing.JFrame {
         }
         
         //Fila 4
-        int F4TempVarNum = moduloArduino.getTempFila4();
-        String F4TempVarNumber = String.valueOf(F4TempVarNum);
-        F4TEMPVAR.setText(F4TempVarNumber + "°");
-        int F4TempVarF = 0;
-        
-        if(F4TempVarNum < 18 || F4TempVarNum > 24){
-            F4TEMPVAR.setBackground(new java.awt.Color(102, 0, 0));
-            F4TempVarF = 1;
-        }else {
-            F4TEMPVAR.setBackground(new java.awt.Color(0, 102, 0));
-            F4TempVarF = 0;
-        }
-        
+      
         int f4HumVarNum = moduloArduino.getHumedadFila4();
         String f4HumVarNumber = String.valueOf(f4HumVarNum);
         F4HUMVAR.setText(f4HumVarNumber + "%");
@@ -256,7 +207,7 @@ public class main extends javax.swing.JFrame {
             F4PhVarF = 0;
         }
         
-        if (F4PhVarF == 1 || f4HumVarF == 1 || F4TempVarF == 1){
+        if (F4PhVarF == 1 || f4HumVarF == 1){
             F3Panel.setBackground(new java.awt.Color(102, 0, 0));
             F1Estado.setBackground(new java.awt.Color(102, 0, 0));
         }else{
@@ -398,9 +349,6 @@ public class main extends javax.swing.JFrame {
         pHPanel1 = new javax.swing.JPanel();
         f2PhVar = new javax.swing.JTextField();
         f1PhLabel = new javax.swing.JLabel();
-        tempPanel1 = new javax.swing.JPanel();
-        f2TempVar = new javax.swing.JTextField();
-        F1TempLabel = new javax.swing.JLabel();
         humPanel1 = new javax.swing.JPanel();
         f2HumVar = new javax.swing.JTextField();
         GenHumLabel1 = new javax.swing.JLabel();
@@ -410,9 +358,6 @@ public class main extends javax.swing.JFrame {
         pHPanel2 = new javax.swing.JPanel();
         F4PHVAR = new javax.swing.JTextField();
         f2PhLabel = new javax.swing.JLabel();
-        tempPanel2 = new javax.swing.JPanel();
-        F4TEMPVAR = new javax.swing.JTextField();
-        F2TempLabel = new javax.swing.JLabel();
         humPanel2 = new javax.swing.JPanel();
         F4HUMVAR = new javax.swing.JTextField();
         GenHumLabel2 = new javax.swing.JLabel();
@@ -422,9 +367,6 @@ public class main extends javax.swing.JFrame {
         pHPanel3 = new javax.swing.JPanel();
         F1PhVar = new javax.swing.JTextField();
         f2PhLabel1 = new javax.swing.JLabel();
-        tempPanel3 = new javax.swing.JPanel();
-        F1TempVar = new javax.swing.JTextField();
-        F2TempLabel1 = new javax.swing.JLabel();
         humPanel3 = new javax.swing.JPanel();
         f1HumVar = new javax.swing.JTextField();
         GenHumLabel3 = new javax.swing.JLabel();
@@ -434,9 +376,6 @@ public class main extends javax.swing.JFrame {
         pHPanel4 = new javax.swing.JPanel();
         F3PhVar1 = new javax.swing.JTextField();
         f2PhLabel2 = new javax.swing.JLabel();
-        tempPanel4 = new javax.swing.JPanel();
-        F3TempVar1 = new javax.swing.JTextField();
-        F2TempLabel2 = new javax.swing.JLabel();
         humPanel4 = new javax.swing.JPanel();
         F3HumVar1 = new javax.swing.JTextField();
         GenHumLabel4 = new javax.swing.JLabel();
@@ -537,7 +476,7 @@ public class main extends javax.swing.JFrame {
         GenTempLabel.setText("TEMP C°");
         tempPanel.add(GenTempLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        generalPanel.add(tempPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 70));
+        generalPanel.add(tempPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 70));
 
         humPanel.setBackground(new java.awt.Color(51, 51, 51));
         humPanel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -562,9 +501,9 @@ public class main extends javax.swing.JFrame {
         GenHumLabel.setText("HUMEDAD");
         humPanel.add(GenHumLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        generalPanel.add(humPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
+        generalPanel.add(humPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 70));
 
-        mainPanel.add(generalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 110, 420));
+        mainPanel.add(generalPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 110, 330));
 
         F2Panel.setBackground(new java.awt.Color(102, 0, 0));
         F2Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -598,32 +537,7 @@ public class main extends javax.swing.JFrame {
         f1PhLabel.setText("pH");
         pHPanel1.add(f1PhLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 40));
 
-        F2Panel.add(pHPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
-
-        tempPanel1.setBackground(new java.awt.Color(51, 51, 51));
-        tempPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        f2TempVar.setEditable(false);
-        f2TempVar.setBackground(new java.awt.Color(0, 102, 0));
-        f2TempVar.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        f2TempVar.setForeground(new java.awt.Color(255, 255, 255));
-        f2TempVar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        f2TempVar.setText("26°");
-        f2TempVar.setBorder(null);
-        f2TempVar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                f2TempVarActionPerformed(evt);
-            }
-        });
-        tempPanel1.add(f2TempVar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
-
-        F1TempLabel.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        F1TempLabel.setForeground(new java.awt.Color(255, 255, 255));
-        F1TempLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F1TempLabel.setText("TEMP C°");
-        tempPanel1.add(F1TempLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
-
-        F2Panel.add(tempPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 70));
+        F2Panel.add(pHPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 70));
 
         humPanel1.setBackground(new java.awt.Color(51, 51, 51));
         humPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -648,7 +562,7 @@ public class main extends javax.swing.JFrame {
         GenHumLabel1.setText("HUMEDAD");
         humPanel1.add(GenHumLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        F2Panel.add(humPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, 70));
+        F2Panel.add(humPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 70));
 
         F1Estado2.setBackground(new java.awt.Color(102, 0, 0));
         F1Estado2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -656,9 +570,9 @@ public class main extends javax.swing.JFrame {
         F1Estado2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F1Estado2.setText("Estado");
         F1Estado2.setBorder(null);
-        F2Panel.add(F1Estado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 110, -1));
+        F2Panel.add(F1Estado2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 110, -1));
 
-        mainPanel.add(F2Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 110, 420));
+        mainPanel.add(F2Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 80, 110, 330));
 
         F3Panel.setBackground(new java.awt.Color(0, 153, 51));
         F3Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -692,32 +606,7 @@ public class main extends javax.swing.JFrame {
         f2PhLabel.setText("pH");
         pHPanel2.add(f2PhLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 40));
 
-        F3Panel.add(pHPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
-
-        tempPanel2.setBackground(new java.awt.Color(51, 51, 51));
-        tempPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        F4TEMPVAR.setEditable(false);
-        F4TEMPVAR.setBackground(new java.awt.Color(0, 102, 0));
-        F4TEMPVAR.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        F4TEMPVAR.setForeground(new java.awt.Color(255, 255, 255));
-        F4TEMPVAR.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F4TEMPVAR.setText("26°");
-        F4TEMPVAR.setBorder(null);
-        F4TEMPVAR.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F4TEMPVARActionPerformed(evt);
-            }
-        });
-        tempPanel2.add(F4TEMPVAR, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
-
-        F2TempLabel.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        F2TempLabel.setForeground(new java.awt.Color(255, 255, 255));
-        F2TempLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F2TempLabel.setText("TEMP C°");
-        tempPanel2.add(F2TempLabel, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
-
-        F3Panel.add(tempPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 70));
+        F3Panel.add(pHPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 70));
 
         humPanel2.setBackground(new java.awt.Color(51, 51, 51));
         humPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -742,7 +631,7 @@ public class main extends javax.swing.JFrame {
         GenHumLabel2.setText("HUMEDAD");
         humPanel2.add(GenHumLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        F3Panel.add(humPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, 70));
+        F3Panel.add(humPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 70));
 
         F1Estado.setBackground(new java.awt.Color(0, 153, 51));
         F1Estado.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -750,9 +639,9 @@ public class main extends javax.swing.JFrame {
         F1Estado.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F1Estado.setText("Estado");
         F1Estado.setBorder(null);
-        F3Panel.add(F1Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 110, -1));
+        F3Panel.add(F1Estado, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 110, -1));
 
-        mainPanel.add(F3Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 110, 420));
+        mainPanel.add(F3Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 80, 110, 330));
 
         F1Panel.setBackground(new java.awt.Color(0, 153, 51));
         F1Panel.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -786,32 +675,7 @@ public class main extends javax.swing.JFrame {
         f2PhLabel1.setText("pH");
         pHPanel3.add(f2PhLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 40));
 
-        F1Panel.add(pHPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
-
-        tempPanel3.setBackground(new java.awt.Color(51, 51, 51));
-        tempPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        F1TempVar.setEditable(false);
-        F1TempVar.setBackground(new java.awt.Color(0, 102, 0));
-        F1TempVar.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        F1TempVar.setForeground(new java.awt.Color(255, 255, 255));
-        F1TempVar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F1TempVar.setText("26°");
-        F1TempVar.setBorder(null);
-        F1TempVar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F1TempVarActionPerformed(evt);
-            }
-        });
-        tempPanel3.add(F1TempVar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
-
-        F2TempLabel1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        F2TempLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        F2TempLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F2TempLabel1.setText("TEMP C°");
-        tempPanel3.add(F2TempLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
-
-        F1Panel.add(tempPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 70));
+        F1Panel.add(pHPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 70));
 
         humPanel3.setBackground(new java.awt.Color(51, 51, 51));
         humPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -836,7 +700,7 @@ public class main extends javax.swing.JFrame {
         GenHumLabel3.setText("HUMEDAD");
         humPanel3.add(GenHumLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        F1Panel.add(humPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, 70));
+        F1Panel.add(humPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 70));
 
         F1Estado1.setBackground(new java.awt.Color(0, 153, 51));
         F1Estado1.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
@@ -844,9 +708,9 @@ public class main extends javax.swing.JFrame {
         F1Estado1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F1Estado1.setText("Estado");
         F1Estado1.setBorder(null);
-        F1Panel.add(F1Estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 110, -1));
+        F1Panel.add(F1Estado1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 110, -1));
 
-        mainPanel.add(F1Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 40, 110, 420));
+        mainPanel.add(F1Panel, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, 110, 330));
 
         F3Panel1.setBackground(new java.awt.Color(0, 153, 51));
         F3Panel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -880,32 +744,7 @@ public class main extends javax.swing.JFrame {
         f2PhLabel2.setText("pH");
         pHPanel4.add(f2PhLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 40));
 
-        F3Panel1.add(pHPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 90, 70));
-
-        tempPanel4.setBackground(new java.awt.Color(51, 51, 51));
-        tempPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        F3TempVar1.setEditable(false);
-        F3TempVar1.setBackground(new java.awt.Color(0, 102, 0));
-        F3TempVar1.setFont(new java.awt.Font("Roboto Black", 0, 18)); // NOI18N
-        F3TempVar1.setForeground(new java.awt.Color(255, 255, 255));
-        F3TempVar1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        F3TempVar1.setText("26°");
-        F3TempVar1.setBorder(null);
-        F3TempVar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                F3TempVar1ActionPerformed(evt);
-            }
-        });
-        tempPanel4.add(F3TempVar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, 20));
-
-        F2TempLabel2.setFont(new java.awt.Font("Roboto Medium", 0, 14)); // NOI18N
-        F2TempLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        F2TempLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        F2TempLabel2.setText("TEMP C°");
-        tempPanel4.add(F2TempLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
-
-        F3Panel1.add(tempPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 90, 70));
+        F3Panel1.add(pHPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 90, 70));
 
         humPanel4.setBackground(new java.awt.Color(51, 51, 51));
         humPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -930,7 +769,7 @@ public class main extends javax.swing.JFrame {
         GenHumLabel4.setText("HUMEDAD");
         humPanel4.add(GenHumLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(6, 6, 80, 40));
 
-        F3Panel1.add(humPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 90, 70));
+        F3Panel1.add(humPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 90, 70));
 
         F1Estado3.setEditable(false);
         F1Estado3.setBackground(new java.awt.Color(0, 153, 51));
@@ -939,9 +778,9 @@ public class main extends javax.swing.JFrame {
         F1Estado3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         F1Estado3.setText("Estado");
         F1Estado3.setBorder(null);
-        F3Panel1.add(F1Estado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 370, 110, -1));
+        F3Panel1.add(F1Estado3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 170, 110, -1));
 
-        mainPanel.add(F3Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 40, 110, 420));
+        mainPanel.add(F3Panel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 110, 330));
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1067,10 +906,6 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_GenHumVarActionPerformed
 
-    private void F1TempVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F1TempVarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F1TempVarActionPerformed
-
     private void f1HumVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f1HumVarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_f1HumVarActionPerformed
@@ -1079,29 +914,9 @@ public class main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_F1PhVarActionPerformed
 
-    private void f2TempVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f2TempVarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_f2TempVarActionPerformed
-
     private void f2PhVarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f2PhVarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_f2PhVarActionPerformed
-
-    private void F3TempVar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3TempVar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F3TempVar1ActionPerformed
-
-    private void F3HumVar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3HumVar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F3HumVar1ActionPerformed
-
-    private void F3PhVar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3PhVar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F3PhVar1ActionPerformed
-
-    private void F4TEMPVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F4TEMPVARActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_F4TEMPVARActionPerformed
 
     private void F4HUMVARActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F4HUMVARActionPerformed
         // TODO add your handling code here:
@@ -1201,6 +1016,14 @@ public class main extends javax.swing.JFrame {
         
     }//GEN-LAST:event_changeFilaBtnActionPerformed
 
+    private void F3HumVar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3HumVar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F3HumVar1ActionPerformed
+
+    private void F3PhVar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_F3PhVar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_F3PhVar1ActionPerformed
+
 
     /**
      * @param args the command line arguments
@@ -1246,20 +1069,13 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JTextField F1Estado3;
     private javax.swing.JPanel F1Panel;
     private javax.swing.JTextField F1PhVar;
-    private javax.swing.JLabel F1TempLabel;
-    private javax.swing.JTextField F1TempVar;
     private javax.swing.JPanel F2Panel;
-    private javax.swing.JLabel F2TempLabel;
-    private javax.swing.JLabel F2TempLabel1;
-    private javax.swing.JLabel F2TempLabel2;
     private javax.swing.JTextField F3HumVar1;
     private javax.swing.JPanel F3Panel;
     private javax.swing.JPanel F3Panel1;
     private javax.swing.JTextField F3PhVar1;
-    private javax.swing.JTextField F3TempVar1;
     private javax.swing.JTextField F4HUMVAR;
     private javax.swing.JTextField F4PHVAR;
-    private javax.swing.JTextField F4TEMPVAR;
     private javax.swing.JLabel GenHumLabel;
     private javax.swing.JLabel GenHumLabel1;
     private javax.swing.JLabel GenHumLabel2;
@@ -1280,7 +1096,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JLabel f2PhLabel1;
     private javax.swing.JLabel f2PhLabel2;
     private javax.swing.JTextField f2PhVar;
-    private javax.swing.JTextField f2TempVar;
     private javax.swing.JLabel fila1Label;
     private javax.swing.JPanel footer;
     private javax.swing.JLabel generalLabel;
@@ -1307,10 +1122,6 @@ public class main extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> selectorEstado;
     private javax.swing.JComboBox<String> selectorFila;
     private javax.swing.JPanel tempPanel;
-    private javax.swing.JPanel tempPanel1;
-    private javax.swing.JPanel tempPanel2;
-    private javax.swing.JPanel tempPanel3;
-    private javax.swing.JPanel tempPanel4;
     private javax.swing.JLabel title_HortiDroid;
     // End of variables declaration//GEN-END:variables
 }
